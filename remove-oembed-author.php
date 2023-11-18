@@ -1,3 +1,4 @@
+<?php
 /*
  * Plugin Name: Remove wp-json oEmbed Author Tags
  * Plugin URI: https://github.com/dandrzejewski/wp-remove-oembed-author
@@ -17,4 +18,8 @@ function filter_oembed_response_data_author( $data, $post, $width, $height ) {
     unset($data['author_url']);
     return $data;
 };
+
 add_filter( 'oembed_response_data', 'filter_oembed_response_data_author', 10, 4 );
+
+?>
+
